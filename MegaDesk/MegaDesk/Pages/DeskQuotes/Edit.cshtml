@@ -1,0 +1,83 @@
+﻿@page
+@model MegaDesk.Pages.DeskQuotes.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>DeskQuote</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DeskQuote.ID" />
+            <div class="form-group">
+                <label asp-for="DeskQuote.QuoteDate" class="control-label"></label>
+                <input asp-for="DeskQuote.QuoteDate" class="form-control" />
+                <span asp-validation-for="DeskQuote.QuoteDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
+                <input asp-for="DeskQuote.CustomerName" class="form-control" />
+                <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.Width" class="control-label"></label>
+                <input asp-for="DeskQuote.Width" class="form-control" />
+                <span asp-validation-for="DeskQuote.Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.Depth" class="control-label"></label>
+                <input asp-for="DeskQuote.Depth" class="form-control" />
+                <span asp-validation-for="DeskQuote.Depth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.NumOfDrawers" class="control-label"></label>
+                <input asp-for="DeskQuote.NumOfDrawers" class="form-control" />
+                <span asp-validation-for="DeskQuote.NumOfDrawers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.SurfaceMaterial" class="control-label"></label>
+                <select asp-for="DeskQuote.SurfaceMaterial">
+                    <option value="Oak">Oak</option>
+                    <option value="Laminate">Laminate</option>
+                    <option value="Pine">Pine</option>
+                    <option value="Rosewood">Rosewood</option>
+                    <option value="Veneer">Veneer</option>
+                </select>
+                <span asp-validation-for="DeskQuote.SurfaceMaterial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.ProductionTime" class="control-label"></label>
+                <select asp-for="DeskQuote.ProductionTime">
+                    <option value="3">3 days</option>
+                    <option value="5">5 days</option>
+                    <option value="7">7 days</option>
+                    <option value="14">14 days</option>
+                </select>
+                <span asp-validation-for="DeskQuote.ProductionTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="DeskQuote.Area" value="0" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.QuoteTotal" class="control-label"></label>
+                <input type="hidden" asp-for="DeskQuote.QuoteTotal" value="0" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
