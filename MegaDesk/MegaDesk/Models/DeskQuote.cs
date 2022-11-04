@@ -1,5 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MegaDesk.Pages.DeskQuotes;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
 using System.Xml.Linq;
+using MegaDesk.Pages.DeskQuotes;
 
 namespace MegaDesk.Models
 {
@@ -18,12 +21,12 @@ namespace MegaDesk.Models
         [Display(Name = "Desk Width")]
         [Range(24, 96)]
         [Required]
-        public int Width { get; set; }
+        public static int Width { get; set; }
 
         [Display(Name = "Desk Depth")]
         [Range(12, 48)]
         [Required]
-        public int Depth { get; set; }
+        public static int Depth { get; set; }
 
         [Display(Name = "Number of Drawers")]
         [Range(0, 7)]
@@ -41,6 +44,6 @@ namespace MegaDesk.Models
         public int Area { get; set; }
 
         [Display(Name = "Quote Total")]
-        public decimal QuoteTotal { get; set; }
+        public decimal QuoteTotal { get; set; } = TotalOfQuote.OfQuote(Width, Depth);
     }
 }

@@ -21,20 +21,20 @@ namespace MegaDesk.Models
                     return;
                 }
 
-                context.DeskQuote.AddRange(
-                    new DeskQuote
-                    {
-                        QuoteDate = DateTime.Now,
-                        CustomerName = "Jane Doe",
-                        Width = 24,
-                        Depth = 12,
-                        NumOfDrawers = 1,
-                        SurfaceMaterial = "Laminate",
-                        ProductionTime = 3,
-                        Area = 288,
-                        QuoteTotal = 410
-                    }
-                    );
+                //context.DeskQuote.AddRange(
+                //    new DeskQuote
+                //    {
+                //        QuoteDate = DateTime.Now,
+                //        CustomerName = "Jane Doe",
+                //        Width = 24,
+                //        Depth = 12,
+                //        NumOfDrawers = 1,
+                //        SurfaceMaterial = "Laminate",
+                //        ProductionTime = 3,
+                //        Area = 288,
+                //        QuoteTotal = 410
+                //    }
+                //    );
             }
         }
     }
